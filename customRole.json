@@ -1,6 +1,6 @@
 {
   "Name":  "Virtual Machine Operator Custom",
-  "Id":  "b325ecf1-77d1-4a50-b513-09f760351928",
+  "Id":  null,
   "IsCustom":  true,
   "Description":  "Can monitor and restart virtual machines.",
   "Actions":  [
@@ -21,6 +21,6 @@
 
                      ],
   "AssignableScopes":  [
-                           "/subscriptions/d521d9b8-a3d3-47b9-ab3e-5ea092a24515"
+                           "/subscriptions/{subscriptionid}"
                        ]
 }
