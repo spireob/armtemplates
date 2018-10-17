@@ -1,0 +1,26 @@
+{
+  "Name":  "Virtual Machine Operator Custom",
+  "Id":  "b325ecf1-77d1-4a50-b513-09f760351928",
+  "IsCustom":  true,
+  "Description":  "Can monitor and restart virtual machines.",
+  "Actions":  [
+                  "Microsoft.Storage/*/read",
+                  "Microsoft.Network/*/read",
+                  "Microsoft.Compute/*/read",
+                  "Microsoft.Compute/virtualMachines/start/action",
+                  "Microsoft.Compute/virtualMachines/deallocate/action",
+                  "Microsoft.Support/*"
+  ],
+  "NotActions":  [
+
+                 ],
+  "DataActions":  [
+
+                  ],
+  "NotDataActions":  [
+
+                     ],
+  "AssignableScopes":  [
+                           "/subscriptions/d521d9b8-a3d3-47b9-ab3e-5ea092a24515"
+                       ]
+}
