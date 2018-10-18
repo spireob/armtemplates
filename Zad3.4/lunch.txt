@@ -4,7 +4,7 @@ ResourceGroupName : testRG6
 Location          : northeurope
 ProvisioningState : Succeeded
 Tags              :
-ResourceId        : /subscriptions/d521d9b8-a3d3-47b9-ab3e-5ea092a24515/resourceGroups/testRG6
+ResourceId        : /subscriptions/{subscriptionid}/resourceGroups/testRG6
 
 
 
