@@ -1,0 +1,25 @@
+PS C:\> $definition = New-AzureRmPolicyDefinition -Name "allow-albo-name-patterns" -DisplayName "Allow VM name with albo text inside." -description "VM name with albo text inside." -Policy 'https://raw.githubusercontent.com/spireob/armtemplates/master/Zad3.1/policydef.json' -Parameter 'https://raw.githubusercontent.com/spireob/armtemplates/master/Zad3.1/params.json' -Mode All
+PS C:\> $definition
+
+
+Name               : allow-albo-name-patterns
+ResourceId         : /subscriptions/{subscriptionid}/providers/Microsoft.Authorization/policyDefinitions/allow-albo-name-patterns
+ResourceName       : allow-albo-name-patterns
+ResourceType       : Microsoft.Authorization/policyDefinitions
+SubscriptionId     : {subscriptionid}
+Properties         : @{displayName=Allow VM name with albo text inside.; policyType=Custom; mode=All; description=VM name with albo text inside.; parameters=; policyRule=}
+PolicyDefinitionId : /subscriptions/{subscriptionid}/providers/Microsoft.Authorization/policyDefinitions/allow-albo-name-patterns
+
+
+
+PS C:\> $rg = Get-AzureRmResourceGroup -Name "testRG7"
+PS C:\> $rg
+
+
+ResourceGroupName : testRG7
+Location          : northeurope
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/{subscriptionid}/resourceGroups/testRG7
+
+PS C:\> $assignment = New-AzureRMPolicyAssignment -Name "Enforce albo in VM name" -PolicyDefinition $definition -Scope $rg.ResourceId
