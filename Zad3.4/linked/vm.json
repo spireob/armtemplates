@@ -15,12 +15,6 @@
         "description": "Virtual machine size (has to be at least the size of Standard_A3 to support 2 NICs)"
       }
     },
-    "diagStorageAccountName": {
-      "type": "string",
-      "metadata": {
-        "description": "Virtual machine Diagnostic Storage Account"
-      }
-    },
     "nic": {
       "type": "string",
       "metadata": {
@@ -57,8 +51,7 @@
       "location": "[parameters('location')]",
       "comments": "This is the virtual machine that you're building.",
       "dependsOn": [
-        "[parameters('nic')]",
-        "[parameters('diagStorageAccountName')]"
+        "[parameters('nic')]"
       ],
       "properties": {
         "osProfile": {
@@ -91,12 +84,6 @@
               "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('nic'))]"
             }
           ]
-        },
-        "diagnosticsProfile": {
-          "bootDiagnostics": {
-            "enabled": true,
-            "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', parameters('diagStorageAccountName')), '2017-06-01').primaryEndpoints['blob']]"
-          }
         }
       }
     }
