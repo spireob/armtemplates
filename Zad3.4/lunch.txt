@@ -1,0 +1,105 @@
+PS C:\> New-AzureRmResourceGroup -Name "testRG6" -Location "North Europe"
+
+ResourceGroupName : testRG6
+Location          : northeurope
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/d521d9b8-a3d3-47b9-ab3e-5ea092a24515/resourceGroups/testRG6
+
+
+
+PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeploymentLinked -ResourceGroupName "testRG6" -TemplateFile "C:\templateARM_Linux.json" -TemplateParameterFile
+VERBOSE: Performing the operation "Creating Deployment" on target "testRG6".
+VERBOSE: 23:15:20 - Template is valid.
+VERBOSE: 23:15:22 - Create template deployment 'ExampleDeploymentLinked'
+VERBOSE: 23:15:22 - Checking deployment status in 5 seconds
+VERBOSE: 23:15:28 - Checking deployment status in 5 seconds
+VERBOSE: 23:15:33 - Resource Microsoft.Storage/storageAccounts 'diagsmfsszys2qec4q' provisioning status is running
+VERBOSE: 23:15:33 - Checking deployment status in 5 seconds
+VERBOSE: 23:15:38 - Resource Microsoft.Network/networkSecurityGroups 'NSG' provisioning status is running
+VERBOSE: 23:15:38 - Resource Microsoft.Network/publicIPAddresses 'testalbo01-pip' provisioning status is succeeded
+VERBOSE: 23:15:38 - Resource Microsoft.Network/publicIPAddresses 'testalbo02-pip' provisioning status is succeeded
+VERBOSE: 23:15:38 - Resource Microsoft.Network/virtualNetworks 'VNET' provisioning status is running
+VERBOSE: 23:15:38 - Checking deployment status in 7 seconds
+VERBOSE: 23:15:45 - Resource Microsoft.Network/virtualNetworks 'VNET' provisioning status is succeeded
+VERBOSE: 23:15:45 - Checking deployment status in 5 seconds
+VERBOSE: 23:15:50 - Resource Microsoft.Network/networkInterfaces 'testalbo01-nic' provisioning status is succeeded
+VERBOSE: 23:15:50 - Resource Microsoft.Network/networkSecurityGroups 'NSG' provisioning status is succeeded
+VERBOSE: 23:15:50 - Resource Microsoft.Storage/storageAccounts 'diagsmfsszys2qec4q' provisioning status is succeeded
+VERBOSE: 23:15:51 - Checking deployment status in 5 seconds
+VERBOSE: 23:15:56 - Resource Microsoft.Resources/deployments 'vm-deploy' provisioning status is running
+VERBOSE: 23:15:56 - Resource Microsoft.Network/networkInterfaces 'testalbo02-nic' provisioning status is succeeded
+VERBOSE: 23:15:56 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:02 - Resource Microsoft.Resources/deployments 'vm-deploy-2' provisioning status is running
+VERBOSE: 23:16:02 - Resource Microsoft.Compute/virtualMachines 'testalbo02' provisioning status is running
+VERBOSE: 23:16:02 - Resource Microsoft.Compute/virtualMachines 'testalbo01' provisioning status is running
+VERBOSE: 23:16:02 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:08 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:13 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:19 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:25 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:31 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:36 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:42 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:48 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:54 - Checking deployment status in 5 seconds
+VERBOSE: 23:16:59 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:05 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:11 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:17 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:22 - Resource Microsoft.Compute/virtualMachines 'testalbo01' provisioning status is succeeded
+VERBOSE: 23:17:22 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:28 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:34 - Resource Microsoft.Resources/deployments 'vm-deploy' provisioning status is succeeded
+VERBOSE: 23:17:34 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:40 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:45 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:51 - Checking deployment status in 5 seconds
+VERBOSE: 23:17:57 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:03 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:09 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:14 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:20 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:26 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:31 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:37 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:43 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:49 - Checking deployment status in 5 seconds
+VERBOSE: 23:18:55 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:00 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:06 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:12 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:18 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:23 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:29 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:35 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:41 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:46 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:52 - Checking deployment status in 5 seconds
+VERBOSE: 23:19:58 - Checking deployment status in 5 seconds
+VERBOSE: 23:20:04 - Checking deployment status in 5 seconds
+VERBOSE: 23:20:09 - Checking deployment status in 5 seconds
+VERBOSE: 23:20:15 - Checking deployment status in 5 seconds
+VERBOSE: 23:20:21 - Resource Microsoft.Compute/virtualMachines 'testalbo02' provisioning status is succeeded
+VERBOSE: 23:20:21 - Checking deployment status in 5 seconds
+VERBOSE: 23:20:26 - Resource Microsoft.Resources/deployments 'vm-deploy-2' provisioning status is succeeded
+
+
+DeploymentName          : ExampleDeploymentLinked
+ResourceGroupName       : testRG6
+ProvisioningState       : Succeeded
+Timestamp               : 18.10.2018 21:20:26
+Mode                    : Incremental
+TemplateLink            :
+Parameters              :
+                          Name             Type                       Value
+                          ===============  =========================  ==========
+                          vmName           String                     testalbo
+                          virtualMachineSize  String                     Standard_D2_v2
+                          adminUsername    String                     infra
+                          adminPassword    SecureString
+                          storageAccountType  String                     Standard_LRS
+                          location         String                     northeurope
+
+Outputs                 :
+DeploymentDebugLogLevel :
