@@ -79,10 +79,10 @@
               "uri": "https://raw.githubusercontent.com/spireob/armtemplates/master/Zad3.4/linked/vm.json"
           },
           "parameters": {
-              "vm-name": { "value": "[variables('virtualMachineName1')]" },
-              "admin-username": { "value": "[parameters('adminusername')]" },
-              "admin-password": { "value": "[parameters('adminpassword')]" },
-              "vm-nic": { "value": "[resourceId('Microsoft.Network/networkInterfaces',variables('nic1'))]" },
+              "vmName": { "value": "[variables('virtualMachineName1')]" },
+              "adminusername": { "value": "[parameters('adminusername')]" },
+              "adminpassword": { "value": "[parameters('adminpassword')]" },
+              "nic": { "value": "[resourceId('Microsoft.Network/networkInterfaces',variables('nic1'))]" },
               "diagStorageAccountName":{ "value": "[variables('diagStorageAccountName')]" }
           }
       }
