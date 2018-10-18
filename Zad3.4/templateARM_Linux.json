@@ -76,7 +76,7 @@
           "mode": "Incremental",
           "templateLink": {
               "contentVersion": "1.0.0.0",
-              "uri": "https://raw.githubusercontent.com/BlackDante/arm-workshop/master/3.2/shared/vm.json"
+              "uri": "https://raw.githubusercontent.com/spireob/armtemplates/master/Zad3.4/linked/vm.json"
           },
           "parameters": {
               "vm-name": { "value": "[variables('virtualMachineName1')]" },
@@ -99,7 +99,7 @@
           "mode": "Incremental",
           "templateLink": {
               "contentVersion": "1.0.0.0",
-              "uri": "https://raw.githubusercontent.com/BlackDante/arm-workshop/master/3.2/shared/vm.json"
+              "uri": "https://raw.githubusercontent.com/spireob/armtemplates/master/Zad3.4/linked/vm.json"
           },
           "parameters": {
               "vm-name": { "value": "[variables('virtualMachineName2')]" },
