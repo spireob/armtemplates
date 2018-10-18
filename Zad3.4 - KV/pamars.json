@@ -1,0 +1,23 @@
+  {
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName" : {"value": "testalbo"},
+        "adminUsername": {
+          "reference": {
+              "keyVault": {
+                  "id": "/subscriptions/{subscriptionid}/resourceGroups/RG2VS/providers/Microsoft.KeyVault/vaults/keyvault3albo"
+              },
+              "secretName": "adminusername"
+          }
+        },
+        "adminPassword": {
+          "reference": {
+              "keyVault": {
+                  "id": "/subscriptions/{subscriptionid}/resourceGroups/RG2VS/providers/Microsoft.KeyVault/vaults/keyvault3albo"
+              },
+              "secretName": "adminpassword"
+          }
+      }
+    }
+  }
