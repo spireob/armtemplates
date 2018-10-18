@@ -50,9 +50,6 @@
       "apiVersion": "2017-03-30",
       "location": "[parameters('location')]",
       "comments": "This is the virtual machine that you're building.",
-      "dependsOn": [
-        "[parameters('nic')]"
-      ],
       "properties": {
         "osProfile": {
           "computerName": "[parameters('VmName')]",
