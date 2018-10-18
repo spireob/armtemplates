@@ -70,7 +70,7 @@
       "apiVersion": "2015-01-01",
       "dependsOn": [
           "[resourceId('Microsoft.Network/networkInterfaces',variables('nic1'))]",
-          "[variables('diagStorageAccountName')]"
+          "[resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAccountName'))]"
       ],
       "properties": {
           "mode": "Incremental",
@@ -93,7 +93,7 @@
       "apiVersion": "2015-01-01",
       "dependsOn": [
           "[resourceId('Microsoft.Network/networkInterfaces',variables('nic2'))]",
-          "[variables('diagStorageAccountName')]"
+          "[resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAccountName'))]"
       ],
       "properties": {
           "mode": "Incremental",
@@ -104,8 +104,8 @@
           "parameters": {
               "vmName": { "value": "[variables('virtualMachineName2')]" },
               "adminusername": { "value": "[parameters('adminusername')]" },
-              "adminpassword": { "value": "[parameters('adminpassword')]" }
-			  "nic": { "value": "[resourceId('Microsoft.Network/networkInterfaces',variables('nic2'))]" },
+              "adminpassword": { "value": "[parameters('adminpassword')]" },
+              "nic": { "value": "[resourceId('Microsoft.Network/networkInterfaces',variables('nic2'))]" },
               "diagStorageAccountName":{ "value": "[variables('diagStorageAccountName')]" }
           }
       }
