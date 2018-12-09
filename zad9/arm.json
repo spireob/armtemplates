@@ -159,7 +159,7 @@
                 "Detection",
                 "Prevention"
             ],
-            "defaultValue": "Prevention",
+            "defaultValue": "Detection",
             "metadata": {
                 "description": "WAF Mode"
             }
@@ -312,7 +312,7 @@
             }
         },
         {
-            "apiVersion": "2016-03-30",
+            "apiVersion": "2017-06-01",
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('webNsgName')]",
             "location": "[parameters('location')]",
@@ -379,7 +379,7 @@
             }
         },
         {
-            "apiVersion": "2016-03-30",
+            "apiVersion": "2017-06-01",
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('sqlNsgName')]",
             "location": "[parameters('location')]",
@@ -431,7 +431,7 @@
             }
         },
         {
-            "apiVersion": "2016-03-30",
+            "apiVersion": "2017-06-01",
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('appGwNsgName')]",
             "location": "[parameters('location')]",
