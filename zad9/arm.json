@@ -335,11 +335,11 @@
 					            {
                         "name": "Allow80TM",
                         "properties": {
-                            "description": "Allow 80 from local VNet",
+                            "description": "Allow 80 from internet - Traffic Manager",
                             "protocol": "Tcp",
                             "sourcePortRange": "*",
                             "destinationPortRange": "80",
-                            "sourceAddressPrefix": "AzureTrafficManager",
+                            "sourceAddressPrefix": "Internet",
                             "destinationAddressPrefix": "*",
                             "access": "Allow",
                             "priority": 101,
