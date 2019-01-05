@@ -200,7 +200,7 @@
         "settings": {
           "configuration": {
 			"url": "[parameters('modulesUrl')]",
-            "script": "[parameters('configurationFunction')].ps1",
+            "script": "[concat(parameters('configurationFunction'), '.ps1')]",
             "function": "[parameters('configurationFunction')]"
 		  },
           "Properties": {
