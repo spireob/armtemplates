@@ -187,7 +187,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('vmName'),'/', variables('vmExtensionName'))]",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2018-04-01",
       "location": "[parameters('location')]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -195,7 +195,7 @@
       "properties": {
         "publisher": "Microsoft.Powershell",
         "type": "DSC",
-        "typeHandlerVersion": "2.19",
+        "typeHandlerVersion": 2.76",
         "autoUpgradeMinorVersion": true,
         "settings": {
           "configuration": {
