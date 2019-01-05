@@ -1,0 +1,138 @@
+PS C:\Users\infra> Get-DscConfigurationStatus
+
+Status     StartDate                 Type            Mode  RebootRequested      NumberOfResources
+------     ---------                 ----            ----  ---------------      -----------------
+Success    1/5/2019 5:56:54 PM       Consistency     Pull  False                4
+
+
+PS C:\Users\infra> Get-DscLocalConfigurationManager
+
+
+ActionAfterReboot              : ContinueConfiguration
+AgentId                        : 84E755F8-1100-11E9-80C7-000D3A368526
+AllowModuleOverWrite           : True
+CertificateID                  : EF6E3B50E6173D32F72C19E6F8EB53E42C3B6BD5
+ConfigurationDownloadManagers  : {[ConfigurationRepositoryWeb]AzureAutomationDSC}
+ConfigurationID                :
+ConfigurationMode              : ApplyAndAutoCorrect
+ConfigurationModeFrequencyMins : 15
+Credential                     :
+DebugMode                      : {NONE}
+DownloadManagerCustomData      :
+DownloadManagerName            :
+LCMCompatibleVersions          : {1.0, 2.0}
+LCMState                       : Idle
+LCMStateDetail                 :
+LCMVersion                     : 2.0
+StatusRetentionTimeInDays      : 10
+SignatureValidationPolicy      : NONE
+SignatureValidations           : {}
+MaximumDownloadSizeMB          : 500
+PartialConfigurations          :
+RebootNodeIfNeeded             : True
+RefreshFrequencyMins           : 30
+RefreshMode                    : Pull
+ReportManagers                 : {[ReportServerWeb]AzureAutomationDSC}
+ResourceModuleManagers         : {[ResourceRepositoryWeb]AzureAutomationDSC}
+PSComputerName                 :
+
+
+
+PS C:\Users\infra> Get-DscConfiguration
+
+
+ConfigurationName    : ContosoWebsite3
+DependsOn            :
+ModuleName           : PsDesiredStateConfiguration
+ModuleVersion        : 1.1
+PsDscRunAsCredential :
+ResourceId           : [WindowsFeature]IIS
+SourceInfo           :
+Credential           :
+DisplayName          : Web Server (IIS)
+Ensure               : Present
+IncludeAllSubFeature : False
+LogPath              :
+Name                 : Web-Server
+Source               :
+PSComputerName       :
+CimClassName         : MSFT_RoleResource
+
+ConfigurationName    : ContosoWebsite3
+DependsOn            :
+ModuleName           : PsDesiredStateConfiguration
+ModuleVersion        : 1.1
+PsDscRunAsCredential :
+ResourceId           : [WindowsFeature]ASP
+SourceInfo           :
+Credential           :
+DisplayName          : ASP.NET 4.5
+Ensure               : Present
+IncludeAllSubFeature : False
+LogPath              :
+Name                 : Web-Asp-Net45
+Source               :
+PSComputerName       :
+CimClassName         : MSFT_RoleResource
+
+ConfigurationName    : ContosoWebsite3
+DependsOn            :
+ModuleName           : PsDesiredStateConfiguration
+ModuleVersion        : 1.1
+PsDscRunAsCredential :
+ResourceId           : [WindowsFeature]WebServerManagementConsole
+SourceInfo           :
+Credential           :
+DisplayName          : IIS Management Console
+Ensure               : Present
+IncludeAllSubFeature : False
+LogPath              :
+Name                 : Web-Mgmt-Console
+Source               :
+PSComputerName       :
+CimClassName         : MSFT_RoleResource
+
+ConfigurationName    : ContosoWebsite3
+DependsOn            :
+ModuleName           : PsDesiredStateConfiguration
+ModuleVersion        : 1.1
+PsDscRunAsCredential :
+ResourceId           : [Script]DownloadWeb
+SourceInfo           :
+Credential           :
+GetScript            :
+                                       @{
+                                           GetScript = $GetScript
+                                           SetScript = $SetScript
+                                           TestScript = $TestScript
+                                           Result = ('True' -in (Test-Path "C:\inetpub\wwwroot\mypage.htm"))
+                                       }
+
+Result               : True
+SetScript            :
+                                       Invoke-WebRequest -Uri
+                       "https://raw.githubusercontent.com/spireob/armtemplates/master/Tyd13dsc/mypage.htm" -OutFile
+                       "C:\inetpub\wwwroot\mypage.htm"
+
+TestScript           :
+                                       $Status = ('True' -in (Test-Path "C:\inetpub\wwwroot\mypage.htm"))
+                                       $Status -eq $True
+
+PSComputerName       :
+CimClassName         : MSFT_ScriptResource
+
+
+
+PS C:\Users\infra>
+
+
+
+
+
+
+
+
+
+
+
+
