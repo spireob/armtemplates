@@ -1,0 +1,28 @@
+az iot hub device-identity create --hub-name alboiothub --device-id MyDotnetDevice
+az iot hub device-identity show-connection-string --hub-name alboiothub --device-id MyDotnetDevice --output table
+
+HostName=alboiothub.azure-devices.net;DeviceId=MyDotnetDevice;SharedAccessKey=CKfq5ZuvhU7ZlQXyaiGkokPh4OcTsq/Ux2RYXiA9/ko=
+az iot hub show --query properties.eventHubEndpoints.events.endpoint --name alboiothub
+
+az iot hub show --query properties.eventHubEndpoints.events.path --name alboiothub
+
+az iot hub policy show --name iothubowner --query primaryKey --hub-name alboiothub
+
+
+
+Register-AzureRmAutomationDscNode -ResourceGroupName 'AnsibleRG' -AutomationAccountName 'automationaccount' -AzureVMName 'vm2'
+
+
+
+
+root@raspberrypi:/etc/apt/sources.list.d# mosquitto_sub -t '#' -v
+zway/NETATMO 64
+zway/NETATMO 2
+zway/POWER 20.025999360000004
+zway/NETATMO 34
+zway/NETATMO 63
+zway/NETATMO 34
+zway/NETATMO 1035.8
+zway/SECURITY on
+zway/TEMP 21.56
+zway/NETATMO 1035.9
