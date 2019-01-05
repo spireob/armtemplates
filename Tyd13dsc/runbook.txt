@@ -1,0 +1,46 @@
+param (
+    [Parameter(Mandatory=$true)]
+    [string]
+    $ResourceGroupName,
+    [Parameter(Mandatory=$true)]
+    [string]
+    $VMName,
+    [Parameter(Mandatory=$true)]
+    [string]
+    $VMUserName,
+    [Parameter(Mandatory=$true)]
+    [string]
+    $VMPassword
+)
+
+
+
+# Authenticate to Azure if running from Azure Automation
+Write-Output "Connecting to Azure"
+$ServicePrincipalConnection = Get-AutomationConnection -Name "AzureRunAsConnection"
+Connect-AzureRmAccount `
+    -ServicePrincipal `
+    -TenantId $ServicePrincipalConnection.TenantId `
+    -ApplicationId $ServicePrincipalConnection.ApplicationId `
+    -CertificateThumbprint $ServicePrincipalConnection.CertificateThumbprint | Write-Verbose
+
+Write-Output "Connected to Azure"
+$pass = ConvertTo-SecureString $VMPassword -AsPlainText -Force
+#Set the parameter values for the Resource Manager template
+$Parameters = @{
+     "diskType"="Standard_LRS"
+      "vmName"=$VMName
+        "vmSize"="Standard_A2"
+        "imageSKU"="2012-R2-Datacenter"
+        "adminUsername"=$VMUserName
+        "adminPassword"=$VMPassword
+        "modulesUrl"='https://raw.githubusercontent.com/spireob/armtemplates/master/Tyd13dsc/ContosoWebsite3a.ps1.zip'
+        "configurationFunction"='ContosoWebsite3a.ps1\ContosoWebsite3'
+        
+    }
+
+$TemplateFile = "https://raw.githubusercontent.com/spireob/armtemplates/master/Tyd13dsc/azuredeploy.json"
+
+# Deploy the storage account
+$DeplyARM = New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroupName -TemplateFile $TemplateFile -TemplateParameterObject $Parameters
+Write-Output $DeplyARM
